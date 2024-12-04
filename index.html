@@ -9,12 +9,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <!-- fav-icon -->
-    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-  <!-- googel font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+    <!-- googel font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -22,63 +29,77 @@
     </header>
 
     <div class="container">
-      <p>Three couples are on vacation. They need to cross the river to reach their hotel. There are 3 rules:
+      <p>
+        Three couples are on vacation. They need to cross the river to reach
+        their hotel. There are 3 rules:
       </p>
-       <ul>
-         <li>Rule 1: The boat can only carry two people at a time. If a third person tries to get in the boat, it will sink.
-         </li>
-          <li>Rule 2: The husbands are so jealous that they cannot let their wife be with another man without their presence.
-          </li>
-         <li>Rule 3: The boat cannot run on its own. At least one person should be on the boat to go from one side to another.          
-         </li>
-         </ul>
-      
+      <ul>
+        <h2>Rules:</h2>
+        <li>
+          1. The boat can only carry two people at a time. If a third person
+          tries to get in the boat, it will sink.
+        </li>
+        <li>
+          2. The husbands are so jealous that they cannot let their wife be with
+          another man without their presence.
+        </li>
+        <li>
+          3. The boat cannot run on its own. At least one person should be on
+          the boat to go from one side to another.
+        </li>
+      </ul>
+      <p class="info">select passengers below to add them to boat.</p>
       <div class="river">
         <div class="side" id="left-side">
           <div class="box" data-box-id="1">
-          <div class="person" data-name="Woman A" data-box-id="1"> 
-            <i class="fas fa-female"></i>
+            <div class="person" data-name="Woman A" data-box-id="1">
+              <i class="fas fa-female"></i>
+            </div>
+            <div class="person" data-name="Man A" data-box-id="1">
+              <i class="fas fa-male"></i>
+            </div>
           </div>
-          <div class="person" data-name="Man A" data-box-id="1">
-            <i class="fas fa-male"></i>
+          <div class="box" data-box-id="2">
+            <div class="person" data-name="Woman B" data-box-id="2">
+              <i class="fas fa-female"></i>
+            </div>
+            <div class="person" data-name="Man B" data-box-id="2">
+              <i class="fas fa-male"></i>
+            </div>
+          </div>
+          <div class="box" data-box-id="3">
+            <div class="person" data-name="Woman C" data-box-id="3">
+              <i class="fas fa-female"></i>
+            </div>
+            <div class="person" data-name="Man C" data-box-id="3">
+              <i class="fas fa-male"></i>
+            </div>
           </div>
         </div>
-        <div class="box" data-box-id="2">
-          <div class="person" data-name="Woman B" data-box-id="2">
-            <i class="fas fa-female"></i>
-          </div>
-          <div class="person" data-name="Man B" data-box-id="2">
-            <i class="fas fa-male"></i>
-          </div>
-        </div>
-        <div class="box" data-box-id="3" >
-          <div class="person" data-name="Woman C" data-box-id="3">
-            <i class="fas fa-female"></i>
-          </div>
-          <div class="person" data-name="Man C" data-box-id="3">
-            <i class="fas fa-male"></i>
-          </div>
-        </div>
-        </div>
+
         <div class="boat-container">
-          <div class="boat" onclick="moveBoat()">
+          <div class="arrow right">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="boat">
             <i class="fas fa-ship"></i>
-            
+          </div>
+          <div class="arrow left">
+            <i class="fa-solid fa-arrow-left"></i>
           </div>
           <div class="boat-passenger" id="boat-passenger"></div>
         </div>
+
         <div class="side" id="right-side">
-          <div class="box"data-box-id="1"></div>
-          <div class="box"data-box-id="2"></div>
-          <div class="box"data-box-id="3"></div>
+          <div class="box" data-box-id="1"></div>
+          <div class="box" data-box-id="2"></div>
+          <div class="box" data-box-id="3"></div>
         </div>
       </div>
       <p id="message"></p>
       <button id="reset-button" onclick="resetPuzzle()">Try Again</button>
     </div>
 
-    <script src="river.js">
-      
-    </script>
+    <script src="river.js"></script>
   </body>
 </html>

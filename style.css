@@ -72,20 +72,35 @@ body {
   ul {
     margin: 20px 0;
    padding:15px; 
-   background: #bc9492;
+   background: #f7ebeb42;
    border-radius: 16px;
   }
 
   ul > li {
     margin: 10px 0;
     padding: 10px;
-    background: #ce534f;
-    color: var(--white-1);
+    background: #d07979;
+    color: var(--white-2);
+    border-radius: 5px;
+    backdrop-filter: blur(6px);
     box-shadow: var(--shadow-1);
     animation: rules 0.8s ease-in-out;
     transform: scale(0);
     animation-fill-mode: forwards; /* Ensures the final state persists */
 }
+/* Add staggered animation delays for list items */
+ul > li:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+ul > li:nth-child(2) {
+  animation-delay: 1.5s;
+}
+
+ul > li:nth-child(3) {
+  animation-delay: 1s;
+}
+
 
 @keyframes rules {
     from {
@@ -95,26 +110,18 @@ body {
         transform: scale(1);
     }
 }
-
-/* Add staggered animation delays for list items */
-ul > li:nth-child(1) {
-    animation-delay: 0.5s;
+.info{
+  color: rgb(75, 183, 120);
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family:  Courier, monospace;
 }
-
-ul > li:nth-child(2) {
-    animation-delay: 1s;
-}
-
-ul > li:nth-child(3) {
-    animation-delay: 1.5s;
-}
-
  .river {
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     height: 400px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
    background: var(--green);
     
@@ -136,18 +143,46 @@ ul > li:nth-child(3) {
     display: flex;
     align-items: center;
     
-    width: 200px;
+    width: 40%;
     height: 100%;
     padding: 20px;
     margin: 0 auto;
     background-color: var(--orange-yellow-crayola);
-    background-image: url('river-image.jpg');
+    background-image: url('https://media.istockphoto.com/id/522751495/photo/webb-lake-weld-maine.jpg?s=612x612&w=0&k=20&c=-uTLPT7Y-r1xvhbn2GmZLN9fKDVKyHOi_yoQJ6anW08=');
     background-position: center;
     background-repeat: no-repeat;
 }
+.arrow{
+  position: absolute;
+  top: 65%;
+  color: rgb(234, 234, 216);
+  background: #433722;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+ height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.5 ease;
+}
+ .right{
+  left: 10px;
+}
+.left{
+  right: 10px;
+}
+.arrow:hover{
+  background: #a0c778;
+  color: #f4f2ef;
+}
 .boat {
-    width: 100px;
-    height: 100px;
+  width: 10vw;
+  height: 10vw;
+    max-width:  100px;
+    max-height: 100px;
     font-size: 7.5rem;
     color: #4CAF50;
     display: flex;
@@ -155,40 +190,39 @@ ul > li:nth-child(3) {
     justify-content: center;
     cursor: pointer;
     background:var(--bg-gradient-jet);
-    transition: transform 1s ease;
+    transition: transform 5s ease;
 }
 .boat.move {
-    transform: translateX(150px);
+  transform: translateX(20vw);
 }
 .boat-passenger {
     position: absolute;
-   transform: translateY(-20px);
+   transform: translateY(-2vw);
     display: flex;
-    gap: 10px;
+    gap: 2vw;
+    transition: transform 5s ease;
 }
 .boat-passenger.back {
 
     position: absolute;
-    transform: translateY(-20px);
+    transform: translateX(20vw);
      display: flex;
-     gap: 10px;
-     right: 10px;
+     gap: 2vw;
+     transition: transform 5s ease;
+     
 }
-.boat-container .boat.back {
-    transform: translateX(90%); /* Moves the boat to the right */
-  }
+
 .person {
     width: 40px;
     height: 40px;
     background-color: #333;
-   
     border-radius: 50%;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    transition: transform 0.5s ease;
+   
 }
 
 
@@ -197,7 +231,7 @@ ul > li:nth-child(3) {
     gap: 5px;
  }
  .box:nth-of-type(1){
-    color: rgb(127, 255, 161);
+    color: #7fffa1;
  }
  .box:nth-of-type(2){
     color: rgb(127, 153, 255);
@@ -231,29 +265,49 @@ ul > li:nth-child(3) {
 
 @media (max-width: 768px) {
     .river {
-
-      flex-direction: column; 
       align-items: center;
     }
   
     .side {
-      width: 100%; 
-     margin: 0px 20px;
+      width: 20%; 
+     margin: 0px 10px;
     }
   
     .boat-container {
-      width: 100%; 
+      width: 80%; 
     }
-  
+    .boat {
+      width: 15vw;
+      height: 15vw;
+      font-size: 6vw;
+  }
+
+  .boat.move {
+      transform: translateX(20vw);
+  }
+
+  .boat-passenger {
+      transform: translateY(-3vw);
+      gap: 3vw;
+  }
+
+  .boat-passenger.back {
+      transform: translateX(25vw);
+  }
     ul > li {
       font-size: 1rem; /
     }
   }
+  ul > h2 {
+    color: #3baa58;
+  }
+
+ 
   
   /* Mobile View (480px and below) */
   @media (max-width: 480px) {
     body {
-      font-size: 0.9rem; 
+      font-size: 1rem; 
     }
   
     .container {
@@ -261,25 +315,51 @@ ul > li:nth-child(3) {
     }
   
     .river {
-      flex-direction: column; /
+      flex-direction: column; 
+      align-items: center;
     }
   
     .side {
       width: 100%; 
-      /* padding: 0.8px; */
-      /* text-align: center;  */
+      flex-direction: row;
+      margin-bottom: 10px;
     }
   
     .boat-container {
       width: 100%; 
+   flex-direction: column;
+  background: url("https://media.istockphoto.com/id/94282281/photo/detail-of-sky-reflection-on-a-lake.jpg?s=612x612&w=0&k=20&c=le_EGj09ivJvJQheDt3lLV0A98yJtZjeFp_fa1lMH-w=");
+  padding: 15px;
+      
+    }
+    /* arrows */
+    .right{
+      top: 10px;
+      transform: rotate(90deg);
+     left:20%;
+    }
+    .left{
+      top: 80%;
+     right:20%;
+     transform: rotate(90deg);
+    
     }
   
     .boat {
       font-size: 2rem; 
+      width: 80px;
+      height: 80px;
+    }
+    .boat.move {
+      transform: translateY(145px);
+    }
+    .boat-passenger.back {
+      transform: translateY(145px);
     }
   
     ul > li {
-      font-size: 0.8rem; 
+      font-size: 1.2rem; 
       padding: 8px;
+      margin: 10px 15px;
     }
   }
