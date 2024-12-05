@@ -7,7 +7,7 @@
 :root{
     --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
+  --white-2: hsl(0, 26%, 93%);
   --green: #4caf50;
 
     --bg-gradient-onyx: linear-gradient(
@@ -48,11 +48,11 @@ li { list-style: none; }
 
 
 
-html { font-family: var(--ff-poppins); }
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: popin, sans-serif;
-    background-color:var(--bg-gradient-jet);
+    font-family: 'poppins', 'sans-serif';
+    background-color:var(--white-2);
     font-size: 18px;
    
   }
@@ -64,26 +64,25 @@ body {
   }
   .container {
   
-    max-width:80%;
-    margin: 0 auto;
-    padding: 1rem;
+   width: 100%;;
+    margin: 0 auto 6rem;
+    padding: 2rem 5rem;
     
   }
   ul {
     margin: 20px 0;
    padding:15px; 
-   background: #f7ebeb42;
-   border-radius: 16px;
+   background: #eec9c942;
+   border-radius: 6px;
   }
 
   ul > li {
     margin: 10px 0;
-    padding: 10px;
+    padding: 20px 15px;
     background: #d07979;
     color: var(--white-2);
     border-radius: 5px;
     backdrop-filter: blur(6px);
-    box-shadow: var(--shadow-1);
     animation: rules 0.8s ease-in-out;
     transform: scale(0);
     animation-fill-mode: forwards; /* Ensures the final state persists */
@@ -100,7 +99,9 @@ ul > li:nth-child(2) {
 ul > li:nth-child(3) {
   animation-delay: 1s;
 }
-
+ul > h2 {
+  color: var(--green);
+}
 
 @keyframes rules {
     from {
@@ -111,10 +112,10 @@ ul > li:nth-child(3) {
     }
 }
 .info{
-  color: rgb(75, 183, 120);
+  color:var(--green);
   margin-bottom: 10px;
   font-weight: 600;
-  font-family:  Courier, monospace;
+  font-family:   monospace;
 }
  .river {
     width: 100%;
@@ -124,7 +125,7 @@ ul > li:nth-child(3) {
     justify-content: center;
     align-items: center;
    background: var(--green);
-    
+    box-shadow:  var(--shadow-2) ; 
 }
 .side{
     width: 30%;
@@ -154,7 +155,7 @@ ul > li:nth-child(3) {
 }
 .arrow{
   position: absolute;
-  top: 65%;
+  top: 75%;
   color: rgb(234, 234, 216);
   background: #433722;
   display: flex;
@@ -175,7 +176,7 @@ ul > li:nth-child(3) {
   right: 10px;
 }
 .arrow:hover{
-  background: #a0c778;
+  background:var(--green);
   color: #f4f2ef;
 }
 .boat {
@@ -183,13 +184,12 @@ ul > li:nth-child(3) {
   height: 10vw;
     max-width:  100px;
     max-height: 100px;
-    font-size: 7.5rem;
+    font-size: 8.5rem;
     color: #4CAF50;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background:var(--bg-gradient-jet);
     transition: transform 5s ease;
 }
 .boat.move {
@@ -244,7 +244,7 @@ ul > li:nth-child(3) {
     border: 2px solid yellow;
 }
 #message {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-weight: bold;
     color: #d9534f;
     text-align: center;
@@ -269,17 +269,17 @@ ul > li:nth-child(3) {
     }
   
     .side {
-      width: 20%; 
+      width: 25%; 
      margin: 0px 10px;
     }
   
     .boat-container {
-      width: 80%; 
+      width: 70%; 
     }
     .boat {
       width: 15vw;
       height: 15vw;
-      font-size: 6vw;
+      font-size: 7.5vw;
   }
 
   .boat.move {
@@ -292,15 +292,13 @@ ul > li:nth-child(3) {
   }
 
   .boat-passenger.back {
-      transform: translateX(25vw);
+      transform: translateX(20vw);
   }
     ul > li {
       font-size: 1rem; /
     }
   }
-  ul > h2 {
-    color: #3baa58;
-  }
+  
 
  
   
@@ -311,27 +309,31 @@ ul > li:nth-child(3) {
     }
   
     .container {
-      padding: 10px; 
+     box-shadow: 0px 0px 2px white;
+     padding: 2rem 2.5rem ;
     }
   
     .river {
       flex-direction: column; 
       align-items: center;
     }
+
   
     .side {
       width: 100%; 
       flex-direction: row;
       margin-bottom: 10px;
+      padding: 20px 0;
     }
   
     .boat-container {
       width: 100%; 
-   flex-direction: column;
+      flex-direction: column;
   background: url("https://media.istockphoto.com/id/94282281/photo/detail-of-sky-reflection-on-a-lake.jpg?s=612x612&w=0&k=20&c=le_EGj09ivJvJQheDt3lLV0A98yJtZjeFp_fa1lMH-w=");
-  padding: 15px;
+  padding: 5px;
       
     }
+   
     /* arrows */
     .right{
       top: 10px;
@@ -346,7 +348,7 @@ ul > li:nth-child(3) {
     }
   
     .boat {
-      font-size: 2rem; 
+      font-size: 5rem; 
       width: 80px;
       height: 80px;
     }
