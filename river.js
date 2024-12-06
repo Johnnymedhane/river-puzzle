@@ -8,7 +8,7 @@ const boatPassengerDiv = document.getElementById("boat-passenger");
 const boatDiv = document.querySelector(".boat");
 const message = document.getElementById("message");
 const resetButton = document.getElementById("reset-button");
-
+let gameStarted = false;
 // Add click handlers to all people
 document.querySelectorAll(".person").forEach((person) => {
   person.onclick = () => selectPerson(person);
@@ -17,7 +17,6 @@ document.querySelectorAll(".person").forEach((person) => {
 // Select or deselect a person for the boat
 function selectPerson(person) {
   console.log(person.dataset.name);
-
   // Ensure the boat is on the correct side
   const personSide = person.closest(".side"); // Get the person's current side (left or right)
   const currentSide = boatOnLeft ? leftSide : rightSide; // Get the side where the boat currently is
@@ -157,7 +156,7 @@ function moveBoat() {
     showMessage("");
     // Check win condition
     checkWinCondition();
-  }, 5000);
+  }, 3000);
 }
 
 // Get the side the boat is currently on
@@ -199,8 +198,16 @@ function checkWinCondition() {
   if (rightPeople.length === 6) {
     message.style.color = "green";
     showMessage("Congratulations! You solved the puzzle!");
+    document.querySelectorAll(".person").forEach((person) => {
+      person.onclick = (event) => {
+        message.style.color="";
+        showMessage("The game hasn’t started yet! Click 'Try Again' to begin.");
+        event.preventDefault()
+      };
+    });
     resetButton.style.display = "block";
   }
+ 
 }
 
 // Show a message to the user
@@ -223,7 +230,9 @@ function resetPuzzle() {
   boatOnLeft = true;
   boat = [];
   boatPassengerDiv.innerHTML = ""; // Clear the boat visually
-
+  document.querySelectorAll(".person").forEach((person) => {
+    person.classList.remove("selected"); // Remove any selection styles
+  });
   // Move each person back to their original box
   Object.keys(originalPositions).forEach((personName) => {
     const person = document.querySelector(`.person[data-name='${personName}']`);
@@ -235,14 +244,19 @@ function resetPuzzle() {
       console.error(`Error: Missing person or box for ${personName}`);
     }
   });
-
+ 
   // Reset messages
   message.textContent = "";
   resetButton.style.display = "none";
-
-  // Reset boat animation
+// Reset boat animation
   boatDiv.classList.remove("move");
+  boatPassengerDiv.classList.remove("back");
+  document.querySelectorAll(".person").forEach((person) => {
+    person.onclick = () => selectPerson(person); // Restore original click functionality
+  });
 }
+
+
 //arrows
 resetButton.addEventListener("click", resetPuzzle);
 

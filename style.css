@@ -125,7 +125,7 @@ ul > h2 {
     justify-content: center;
     align-items: center;
    background: var(--green);
-    box-shadow:  var(--shadow-2) ; 
+    box-shadow:  #585353 0 0 14px 3px inset ; 
 }
 .side{
     width: 30%;
@@ -148,6 +148,7 @@ ul > h2 {
     height: 100%;
     padding: 20px;
     margin: 0 auto;
+    box-shadow: 0 0 10px 5px rgb(219, 238, 193) inset;
     background-color: var(--orange-yellow-crayola);
     background-image: url('https://media.istockphoto.com/id/522751495/photo/webb-lake-weld-maine.jpg?s=612x612&w=0&k=20&c=-uTLPT7Y-r1xvhbn2GmZLN9fKDVKyHOi_yoQJ6anW08=');
     background-position: center;
@@ -190,7 +191,7 @@ ul > h2 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 5s ease;
+    transition: transform 3s ease;
 }
 .boat.move {
   transform: translateX(20vw);
@@ -200,7 +201,7 @@ ul > h2 {
    transform: translateY(-2vw);
     display: flex;
     gap: 2vw;
-    transition: transform 5s ease;
+    transition: transform 3s ease;
 }
 .boat-passenger.back {
 
@@ -208,7 +209,7 @@ ul > h2 {
     transform: translateX(20vw);
      display: flex;
      gap: 2vw;
-     transition: transform 5s ease;
+     transition: transform 3s ease;
      
 }
 
